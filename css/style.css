@@ -10,6 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 html {
@@ -20,6 +21,16 @@ body {
   font-size: 1.6rem;
   color: var(--dark);
   font-family: "Nunito Sans", sans-serif;
+  line-height: 1.4;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark);
 }
 
 .container {
@@ -262,12 +273,114 @@ body {
   margin-top: 0.5rem;
 }
 
+/* SINGLE */
+.article {
+  margin-bottom: 5rem;
+  padding: 0 1rem;
+}
+
+.article__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr 1fr;
+}
+
+article .article__body__img {
+  margin-bottom: 2rem;
+}
+
+article .article__body__img img {
+  width: 100%;
+  height: 45rem;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.article__metadata ul {
+  margin-bottom: 2rem;
+}
+
+.article__metadata ul li {
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.article__metadata ul li:first-child {
+  text-transform: uppercase;
+}
+
+.article__metadata ul li:last-child {
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.article__body__header p {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  opacity: 0.4;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+.article__body__header h1 {
+  margin-bottom: 2rem;
+}
+
+.article__body__text {
+  padding-left: 10rem;
+}
+
+.article__body__text blockquote {
+  font-size: 3rem;
+  margin-left: -10rem;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.article__share a {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 1.2rem;
+  display: block;
+  text-align: right;
+  font-weight: 900;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.article__share a:hover {
+  text-decoration: underline;
+}
+
+.recent {
+  margin: 5rem 0;
+  padding: 0 1rem;
+}
+
+.recent__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 6rem;
+}
+
+.recent__grid__item .metadata {
+  margin-bottom: 1rem;
+}
+
+.recent__grid__item h3 {
+  margin-bottom: 2rem;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 520px) {
   .header__wrapper h2 {
-    font-size: 6rem;
+    font-size: 4rem;
     line-height: 1;
     margin-bottom: 1rem;
+  }
+
+  .header__wrapper p {
+    font-size: 1.6rem;
   }
 
   .top__story__grid {
@@ -292,6 +405,30 @@ body {
   }
 
   .latest__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* SINGLE */
+
+  .article__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article__metadata {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .article__body__text {
+    padding: 0;
+  }
+
+  .article__body__text blockquote {
+    font-size: 2.5rem;
+    margin-left: 0;
+  }
+
+  .recent__grid {
     grid-template-columns: 1fr;
   }
 }
